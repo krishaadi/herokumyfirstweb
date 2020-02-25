@@ -19,7 +19,7 @@ class HerokuController{
 	@GetMapping("/")
 	String hello()
 	{
-		return "My First Web Appp";
+		return "My First Web App";
 	}
 }
 //Close Simple App
