@@ -16,7 +16,7 @@ public class HerokuUseCaseSampleApplication {
 //Adkrishna : Added to test Simple Spring boot 
 @RestController
 class HerokuController{
-	@GetMapping("/myWeb")
+	@GetMapping("/")
 	String hello()
 	{
 		return "My First Web Appp";
