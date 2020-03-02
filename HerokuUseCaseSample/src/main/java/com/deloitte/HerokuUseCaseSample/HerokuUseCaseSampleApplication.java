@@ -48,7 +48,7 @@ class Generate_PDF_Dynamic { 							//2. A new Class for PDF Generation
 	@GetMapping(path = "/{contactId}") 					//3. Get URL parameter
 	public String myPdf(@PathVariable String contactId) { //4. Get Path variable in URL
 		try {    										//5. main try-catch block 
-			String file_name = "file:///C:/Temp//ChillyFlakes.pdf";//"C:\\Temp\\ChillyFlakes.pdf";
+			String file_name = "https://cloud-cube.s3.amazonaws.com/lh6oxa0i6nie/ChillyFlakes.pdf";//"C:\\Temp\\ChillyFlakes.pdf";
 			Document document = new Document();
 			//Composing PDF 
 			try {
