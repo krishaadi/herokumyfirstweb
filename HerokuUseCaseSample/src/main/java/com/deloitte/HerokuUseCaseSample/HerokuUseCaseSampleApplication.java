@@ -36,13 +36,13 @@ public class HerokuUseCaseSampleApplication {
 @RestController
 @RequestMapping("/ContactId") //1. Creating request map 
 
-class HerokuController{
-	@GetMapping("/")
-	String hello()
-	{
-		return "My First Web App";
-	}
-}
+//class HerokuController{
+	//@GetMapping("/")
+	//String hello()
+	//{
+//		return "My First Web App";
+	//}
+//}
 //Close Simple App
 class Generate_PDF_Dynamic { 							//2. A new Class for PDF Generation
 	@GetMapping(path = "/{contactId}") 					//3. Get URL parameter
