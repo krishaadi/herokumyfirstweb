@@ -104,11 +104,12 @@ class Generate_PDF_Dynamic { 							//2. A new Class for PDF Generation
 			    	      htmlWorker.parse(new StringReader(str));
 			    	 }
 			    		 document.close();
-			    		 return "Please check your PDF @temp";
+			    		 
 		}catch (Exception e)
 		{
 			System.err.println(e);
 		}
+		return "Please check your PDF @temp";
 	}
 	
 	
