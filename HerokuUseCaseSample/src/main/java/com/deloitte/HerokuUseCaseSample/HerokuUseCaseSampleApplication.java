@@ -46,7 +46,7 @@ public class HerokuUseCaseSampleApplication {
 //Close Simple App
 class Generate_PDF_Dynamic { 							//2. A new Class for PDF Generation
 	@GetMapping(path = "/{contactId}") 					//3. Get URL parameter
-	public void myPdf(@PathVariable String contactId) { //4. Get Path variable in URL
+	public String myPdf(@PathVariable String contactId) { //4. Get Path variable in URL
 		try {    										//5. main try-catch block 
 			String file_name = "C:\\Temp\\ChillyFlakes.pdf";
 			Document document = new Document();
@@ -104,6 +104,7 @@ class Generate_PDF_Dynamic { 							//2. A new Class for PDF Generation
 			    	      htmlWorker.parse(new StringReader(str));
 			    	 }
 			    		 document.close();
+			    		 return "Please check your PDF @temp";
 		}catch (Exception e)
 		{
 			System.err.println(e);
