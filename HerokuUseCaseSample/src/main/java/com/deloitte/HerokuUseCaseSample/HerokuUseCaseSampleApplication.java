@@ -67,7 +67,7 @@ class Generate_PDF_Dynamic { 							//2. A new Class for PDF Generation
 		    	 Connection conn = app.connect();
 		    	 PreparedStatement ps = null;
 		    	 ResultSet rs = null;
-		    	 String query = "SELECT * FROM public.case";
+		    	 String query = "Select Name FROM Salesforce.contact where id = 3";
 		    	 ps = conn.prepareStatement(query);
 		    	 rs = ps.executeQuery();
 		         System.out.println("Connected to DB");
