@@ -133,7 +133,7 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			metadata.setContentLength(arrayInputStream.available());
 			final PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, "Document/Demo-"+contactId+".pdf",
 			        new BufferedInputStream(arrayInputStream), metadata);
-			putObjectRequest.setCannedAcl(CannedAccessControlList.PublicRead); //making the object public
+			putObjectRequest.withCannedAcl(CannedAccessControlList.PublicRead); //making the object public
 
 			final PutObjectResult result = s3Client.putObject(putObjectRequest);
 			
