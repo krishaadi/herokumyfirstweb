@@ -146,11 +146,11 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			String URL = "https://"+ bucketName + ".s3." + region + ".amazonaws.com/" + "Document/Demo-" + contactId + ".pdf"; 									 
 			//desktop browse
 			Desktop desktop = Desktop.getDesktop();
-            try {
+            //try {
                 desktop.browse(new URI(URL));
-            } catch (IOException | URISyntaxException e) {
+            //} catch (IOException | URISyntaxException e) {
                 // TODO Auto-generated catch block
-                e.printStackTrace();
+              //  e.printStackTrace();
 			//RestTemplate template = new RestTemplate();
 			//template.postForLocation(URL,putObjectRequest);
 			
