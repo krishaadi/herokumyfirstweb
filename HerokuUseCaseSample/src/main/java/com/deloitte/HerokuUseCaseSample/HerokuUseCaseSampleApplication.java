@@ -145,15 +145,10 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			System.out.println("Tag: "+result.getETag());
 			//Construct URL to open documen	
 			String URL = "https://"+ bucketName + ".s3." + region + ".amazonaws.com/" + "Document/Demo-" + contactId + ".pdf"; 									 
-			//desktop browse
-			Desktop desktop = Desktop.getDesktop();
-            //try {
-                desktop.browse(new URI(URL));
-            //} catch (IOException | URISyntaxException e) {
-                // TODO Auto-generated catch block
-              //e.printStackTrace();
-			//RestTemplate template = new RestTemplate();
-			//template.postForLocation(URL,putObjectRequest);
+			 Desktop d=Desktop.getDesktop();
+
+		        // Browse a URL
+		        d.browse(new URI(URL));
 			
 		} catch (Exception e) {
 			System.err.println(e);
