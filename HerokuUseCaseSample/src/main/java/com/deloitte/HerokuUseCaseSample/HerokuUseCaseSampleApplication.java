@@ -116,6 +116,9 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 
 				htmlWorker.parse(new StringReader(str));
 			}
+			
+			document.close();
+			
 			BasicAWSCredentials creds = new BasicAWSCredentials(bucketKey, bucketSecret); 
 			AmazonS3 s3Client = AmazonS3ClientBuilder
 											.standard()
@@ -128,27 +131,19 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			metadata.setSSEAlgorithm(ObjectMetadata.AES_256_SERVER_SIDE_ENCRYPTION);
 			metadata.setContentType("application/pdf");
 			metadata.setContentLength(arrayInputStream.available());
-			final PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, "Demo-"+contactId+".pdf",
+			final PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, "Document/Demo-"+contactId+".pdf",
 			        new BufferedInputStream(arrayInputStream), metadata);
 
 			final PutObjectResult result = s3Client.putObject(putObjectRequest);
 			
 			System.out.println("Tag: "+result.getETag());
 			
-			document.close();
+			
 			
 			
 
 		} catch (Exception e) {
 			System.err.println(e);
-		}finally {
-			document.close();
-			try {
-				outputStream.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}
 		return "Please check your PDF @temp";
 	}
