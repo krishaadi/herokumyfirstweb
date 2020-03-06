@@ -150,7 +150,7 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			URL url = uri.toURL(); 
 			
 			//URL base = new URL("https://gpsdemodoc.s3.us-east-2.amazonaws.com/Document/Demo-0036F00003PEg0P.pdf");
-			return url;
+			return uri;
 		} catch (Exception e) {
 			System.err.println(e);
 		}
