@@ -147,7 +147,7 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			//desktop browse
 			Desktop desktop = Desktop.getDesktop();
             //try {
-                desktop.browse(new URI(URL));
+                desktop.browse(URL);
             //} catch (IOException | URISyntaxException e) {
                 // TODO Auto-generated catch block
               //  e.printStackTrace();
