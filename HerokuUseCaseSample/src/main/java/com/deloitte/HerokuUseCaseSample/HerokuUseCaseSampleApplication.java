@@ -67,6 +67,7 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			String bucketName=System.getenv("BUCKET_NAME");//"gpsdemodoc";
 			String bucketKey=System.getenv("BUCKET_KEY");//"AKIAQL377ZCZDGQUCB3H";
 			String bucketSecret=System.getenv("BUCKET_SECRET");//"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";
+			String region = "us-east-2";
 			
 			// Composing PDF
 			try {
@@ -139,15 +140,12 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			final PutObjectResult result = s3Client.putObject(putObjectRequest);
 			
 			System.out.println("Tag: "+result.getETag());
-			
-			
-			
-			
-
+			//Construct URL to open document 									
+            String URL = "https://"+ "+bucketName+" + ".s3." + "+region+" + ".amazonaws.com/" + "Document/Demo-" + "+contactId+" + ".pdf";
 		} catch (Exception e) {
 			System.err.println(e);
 		}
-		return "Please click Open Letter button under Contact";
+		return URL;
 	}
 
 }
