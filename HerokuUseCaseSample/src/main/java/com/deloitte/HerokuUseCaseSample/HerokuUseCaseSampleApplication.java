@@ -140,13 +140,15 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			final PutObjectResult result = s3Client.putObject(putObjectRequest);
 			
 			System.out.println("Tag: "+result.getETag());
-			 									 
+			//Construct URL to open documen	
+			String URL = "https://"+ bucketName + ".s3." + region + ".amazonaws.com/" + "Document/Demo-" + contactId + ".pdf"; 									 
+			RestTemplate template = new RestTemplate();
+			template.postForLocation(URL, postObject);
 		} catch (Exception e) {
 			System.err.println(e);
 		}
-		//Construct URL to open document
-		String URL = "https://"+ bucketName + ".s3." + region + ".amazonaws.com/" + "Document/Demo-" + contactId + ".pdf";
-		return URL;
+			
+		return "Please wait while doc is loading";
 	}
 
 }
