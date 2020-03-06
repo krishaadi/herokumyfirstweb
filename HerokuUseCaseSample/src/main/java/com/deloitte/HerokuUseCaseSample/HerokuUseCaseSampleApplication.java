@@ -144,7 +144,7 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			//Construct URL to open documen	
 			String URL = "https://"+ bucketName + ".s3." + region + ".amazonaws.com/" + "Document/Demo-" + contactId + ".pdf"; 									 
 			RestTemplate template = new RestTemplate();
-			template.postForLocation(URL, postObject);
+			template.postForLocation(URL);
 		} catch (Exception e) {
 			System.err.println(e);
 		}
