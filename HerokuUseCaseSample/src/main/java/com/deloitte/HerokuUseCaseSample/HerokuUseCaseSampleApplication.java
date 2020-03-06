@@ -81,7 +81,6 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			Connection conn = app.connect();
 			PreparedStatement ps = null;
 			ResultSet rs = null;
-			var ids = "+contactId+";
 			String query = "Select * FROM Salesforce.contact where id = 'contactId'";
 			ps = conn.prepareStatement(query);
 			rs = ps.executeQuery();
