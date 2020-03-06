@@ -147,7 +147,7 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 		} catch (Exception e) {
 			System.err.println(e);
 		}
-		return "Please check your PDF @temp";
+		return "Please click Open Letter button under Contact";
 	}
 
 }
