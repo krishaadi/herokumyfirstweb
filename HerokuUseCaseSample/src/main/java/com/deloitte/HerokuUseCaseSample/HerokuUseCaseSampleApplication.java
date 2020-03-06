@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.awt.Desktop;
+import Java.net.URI;
 
 import org.apache.tomcat.util.http.fileupload.ByteArrayOutputStream;
 import org.springframework.boot.SpringApplication;
@@ -147,10 +148,10 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			//desktop browse
 			Desktop desktop = Desktop.getDesktop();
             //try {
-                desktop.browse(URL);
+                desktop.browse(new URI(URL));
             //} catch (IOException | URISyntaxException e) {
                 // TODO Auto-generated catch block
-              //  e.printStackTrace();
+              //e.printStackTrace();
 			//RestTemplate template = new RestTemplate();
 			//template.postForLocation(URL,putObjectRequest);
 			
