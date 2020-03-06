@@ -145,9 +145,10 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			
 			System.out.println("Tag: "+result.getETag());
 			//Construct URL to open documen	
-			String url1 = ""https://"+ bucketName + ".s3." + region + ".amazonaws.com/" + "Document/Demo-" + contactId + ".pdf""; 									 
+			//String url1 = "https://"+ bucketName + ".s3." + region + ".amazonaws.com/" + "Document/Demo-" + contactId + ".pdf";
+			//url1 = 
 			
-			URL base = new URL(url1);
+			URL base = new URL("https://gpsdemodoc.s3.us-east-2.amazonaws.com/Document/Demo-0036F00003PEg0P.pdf");
 			return base;
 		} catch (Exception e) {
 			System.err.println(e);
