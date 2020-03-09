@@ -87,7 +87,7 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			Connection conn = app.connect();
 			PreparedStatement ps = null;
 			ResultSet rs = null;
-			String query = "Select Name FROM salesforce.contact where Sfid = '0036F000022vdzAQAQ'";
+			String query = "Select Name FROM salesforce.contact where Sfid = '0036F000022vdzAQAQ'";///ContactId
 			ps = conn.prepareStatement(query);
 			rs = ps.executeQuery();
 			System.out.println("Connected to DB");
@@ -146,7 +146,7 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			System.out.println("Tag: "+result.getETag());
 			//Construct URL to open documen- - Review This part 	
 			String str = "https://"+ bucketName + ".s3." + region + ".amazonaws.com/" + "Document/Demo-" + contactId + ".pdf";
-			return openWebpage(url.toURI(str));
+			return result;// openWebpage(url.toURI(str));
 		} catch (Exception e) {
 			System.err.println(e);
 		}
