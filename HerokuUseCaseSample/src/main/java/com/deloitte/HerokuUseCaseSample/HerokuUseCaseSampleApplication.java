@@ -96,15 +96,12 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			rs = ps.executeQuery();
 			System.out.println("Connected to DB");
 			// System.out.println(contactId);
-
 			Paragraph para1 = new Paragraph("Demo PDF Testing");
-
 			document.add(para1);
-			document.add(new Paragraph("This is a sample document for GPS Demo"));
+			document.add(new Paragraph("This is a sample document for Demo"));
 			document.add(new Paragraph(contactId));
 			document.add(new Paragraph("  "));
 			while (rs.next()) {
-
 				document.add(new Paragraph(" "));
 				Paragraph para = new Paragraph("Contact_Id " + ":" + contactId);
 				Paragraph para2 = new Paragraph("Contact Name " + ":" + rs.getString("Name"));
