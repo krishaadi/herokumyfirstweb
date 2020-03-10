@@ -92,7 +92,7 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 	                + "FROM salesforce.contact"
 	                + "where Sfid = ?";	
 			ps = conn.prepareStatement(query);
-			ps.setChar(1, contactId);
+			ps.setString(1, contactId);
 			rs = ps.executeQuery();
 			System.out.println("Connected to DB");
 			// System.out.println(contactId);
