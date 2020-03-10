@@ -87,10 +87,10 @@ class Generate_PDF_Dynamic { // 2. A new Class for PDF Generation
 			Connection conn = app.connect();
 			PreparedStatement ps = null;
 			ResultSet rs = null;
-			//String query = "Select Name FROM salesforce.contact where Sfid = '0036F000022vdzAQAQ'";/// ContactId
-			String query = "Select Name"
-	                + "FROM salesforce.contact"
-	                + "where Sfid = ?";	
+			String query = "Select Name FROM salesforce.contact where Sfid = ? ";/// ContactId
+			//String query = "Select Name"
+	          //      + "FROM salesforce.contact"
+	            ///    + "where Sfid = ?";	
 			ps = conn.prepareStatement(query);
 			ps.setString(1, contactId);
 			rs = ps.executeQuery();
